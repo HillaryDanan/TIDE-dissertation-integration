@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Connect Hillary's existing tools into dissertation pipeline
-NO NEW TOOLS - just data flow!
+Connect existing tools into pipeline
+
 """
 
 import json
