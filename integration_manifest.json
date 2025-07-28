@@ -1,0 +1,24 @@
+{
+  "dissertation_mapping": {
+    "study_1_behavioral": {
+      "original": "370 words, 687 raters, 14 features",
+      "implementation": "pattern-analyzer (14+ tools)",
+      "live_at": "https://hillarydanan.github.io/pattern-analyzer/"
+    },
+    "study_2_task_fMRI": {
+      "original": "20 NT participants, word-level",
+      "implementation": "TIDE-analysis automated testing",
+      "live_at": "https://github.com/HillaryDanan/TIDE-analysis"
+    },
+    "study_3_resting_state": {
+      "original": "120 participants rsFC analysis",
+      "implementation": "TIDE-resonance perception study",
+      "live_at": "https://hillarydanan.github.io/TIDE-resonance/collect_enhanced.html"
+    },
+    "key_findings": {
+      "3_factors": "Internal, External, Concrete",
+      "dmPFC_activation": "BIND integration dynamics",
+      "vATL_overextension": "concrete-overflow-detector"
+    }
+  }
+}

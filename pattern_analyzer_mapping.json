@@ -1,0 +1,18 @@
+{
+  "dissertation_to_pattern_analyzer": {
+    "social": "relationship_analyzer",
+    "emotion": "sentiment_analyzer",
+    "polarity": "polarity_detector",
+    "morality": "ethical_reasoning_analyzer",
+    "thought": "cognitive_complexity_analyzer",
+    "self_motion": "agency_detector",
+    "space": "spatial_concept_analyzer",
+    "time": "temporal_analyzer",
+    "number": "quantitative_analyzer",
+    "visual": "perceptual_detail_analyzer",
+    "color": "color_mention_analyzer",
+    "auditory": "sound_reference_analyzer",
+    "smell_taste": "sensory_analyzer",
+    "tactile": "tactile_reference_analyzer"
+  }
+}
