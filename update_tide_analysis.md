@@ -1,6 +1,6 @@
 # Updates for TIDE-analysis
 
-Add to your existing analyze.py:
+Add to existing analyze.py:
 
 ```python
 # Dissertation validation markers
@@ -13,4 +13,4 @@ DISSERTATION_VALIDATED = {
 }
 ```
 
-Your systematic testing already implements Study 2 methodology!
+Systematic testing already implements Study 2 methodology
