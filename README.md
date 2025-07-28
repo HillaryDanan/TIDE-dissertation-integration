@@ -41,4 +41,5 @@ All tools are live and collecting data
 | Key Finding: dmPFC Integration | BIND | Boundary integration dynamics |
 | Key Finding: vATL in ASD | concrete-overflow | Detects concrete thinking patterns |
 
-
+## 🎯 Integration Dashboard
+[**View Integration Dashboard**](https://hillarydanan.github.io/TIDE-dissertation-integration/dissertation_dashboard.html)
