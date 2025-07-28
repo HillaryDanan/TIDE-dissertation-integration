@@ -30,3 +30,15 @@ This repository connects all implementations of findings from:
 
 ## 🚀 Data Flow
 All tools are live and collecting data
+
+## 🔬 How Studies Map to Tools
+
+| Study | Implementation | What It Does |
+|-------------------|----------------|--------------|
+| Study 1: 14 Features (N=687) | pattern-analyzer | Analyzes AI text for all 14 semantic dimensions |
+| Study 2: Task fMRI (N=20) | TIDE-analysis | Systematic testing of AI responses |
+| Study 3: Resting-state (N=120) | TIDE-resonance | Metacognitive reflection studies |
+| Key Finding: dmPFC Integration | BIND | Boundary integration dynamics |
+| Key Finding: vATL in ASD | concrete-overflow | Detects concrete thinking patterns |
+
+
