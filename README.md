@@ -1,11 +1,11 @@
-# Levinson (2021) Dissertation Implementation Suite
+# Levinson (2021) Implementation Suite
 
 This repository connects all implementations of findings from:
 **"The Neural Representation of Abstract Concepts in Typical and Atypical Cognition"**
 
 ## 🧠 Already Implemented Tools
 
-### Core Framework (Your 14 Features, 3 Factors)
+### Core Framework (14 Features, 3 Factors)
 - ✅ [pattern-analyzer](https://github.com/HillaryDanan/pattern-analyzer) - 14+ analysis tools
 - ✅ [TIDE Framework](https://github.com/HillaryDanan/TIDE) - Theoretical foundation
 - ✅ [TIDE-analysis](https://github.com/HillaryDanan/TIDE-analysis) - Automated testing
@@ -29,4 +29,4 @@ This repository connects all implementations of findings from:
 - [Interactive Visualizations](https://hillarydanan.github.io/TIDE-resonance/interactive_resonance.html)
 
 ## 🚀 Data Flow
-All tools are live and collecting real data!
+All tools are live and collecting data
