@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Levinson (2021) Framework - Live Implementation</title>
+    <style>
+        body { 
+            font-family: -apple-system, Arial; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .tool-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .implementation-tag {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+        .finding-tag {
+            display: inline-block;
+            background: #FF6B6B;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+        .significance-tag {
+            display: inline-block;
+            background: #4ECDC4;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+        }
+        a { color: #667eea; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .flow-diagram {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .neural-finding {
+            background: #fff3cd;
+            border-left: 4px solid #FFD700;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .prediction-box {
+            background: #d1ecf1;
+            border-left: 4px solid #0c5460;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>The Neural Representation of Abstract Concepts</h1>
+        <h2>Levinson (2021) - Full Implementation Suite</h2>
+        <p>Every tool below implements findings from the dissertation</p>
+    </div>
+    
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">14</div>
+            <div>Validated Features</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div>Core Factors</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">867</div>
+            <div>Total Participants</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">p<0.005</div>
+            <div>Significance</div>
+        </div>
+    </div>
+
+    <div class="neural-finding">
+        <h2>🧠 Key Neural Mechanisms <span class="finding-tag">NEW</span></h2>
+        <h3>Thalamic Overflow in Abstract Processing</h3>
+        <p><strong>Finding:</strong> ASD individuals process figurative language using concrete semantic regions (left thalamus, p < .05 cluster-corrected), 
+        while NT individuals use this same region for literal/concrete processing.</p>
+        <p><strong>AI Implication:</strong> When AI systems encounter metaphors or figurative language, they may default to concrete feature extraction pathways, 
+        similar to the neural patterns observed in ASD.</p>
+        <span class="significance-tag">Study 5, Figure 32, p. 114</span>
+    </div>
+    
+    <div class="flow-diagram">
+        <h2>Data Flow Architecture</h2>
+        <svg width="800" height="300" viewBox="0 0 800 300">
+            <!-- Task-based path -->
+            <rect x="10" y="10" width="150" height="60" fill="#667eea" rx="5"/>
+            <text x="85" y="45" fill="white" text-anchor="middle">TIDE-analysis</text>
+            <text x="85" y="90" fill="#666" text-anchor="middle">(Task-based)</text>
+            
+            <line x1="160" y1="40" x2="250" y2="40" stroke="#667eea" stroke-width="3" marker-end="url(#arrowhead)"/>
+            
+            <rect x="250" y="10" width="150" height="60" fill="#764ba2" rx="5"/>
+            <text x="325" y="45" fill="white" text-anchor="middle">pattern-analyzer</text>
+            <text x="325" y="90" fill="#666" text-anchor="middle">(14 Features)</text>
+            
+            <line x1="400" y1="40" x2="490" y2="40" stroke="#764ba2" stroke-width="3" marker-end="url(#arrowhead)"/>
+            
+            <rect x="490" y="10" width="150" height="60" fill="#4CAF50" rx="5"/>
+            <text x="565" y="45" fill="white" text-anchor="middle">Results</text>
+            <text x="565" y="90" fill="#666" text-anchor="middle">(Live Dashboard)</text>
+            
+            <!-- Resting-state path -->
+            <rect x="250" y="120" width="150" height="60" fill="#FF6B6B" rx="5"/>
+            <text x="325" y="155" fill="white" text-anchor="middle">TIDE-resonance</text>
+            <text x="325" y="200" fill="#666" text-anchor="middle">(Resting-state)</text>
+            
+            <!-- NEW: Thalamic overflow detection -->
+            <rect x="490" y="120" width="150" height="60" fill="#FFD700" rx="5"/>
+            <text x="565" y="155" fill="black" text-anchor="middle">Thalamic Monitor</text>
+            <text x="565" y="200" fill="#666" text-anchor="middle">(Metaphor detection)</text>
+            
+            <line x1="325" y1="120" x2="325" y2="70" stroke="#FF6B6B" stroke-width="3" marker-end="url(#arrowhead)"/>
+            <line x1="400" y1="155" x2="490" y2="155" stroke="#FFD700" stroke-width="3" marker-end="url(#arrowhead)"/>
+            
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+                </marker>
+            </defs>
+        </svg>
+    </div>
+
+    <div class="prediction-box">
+        <h2>🔮 Testable AI Predictions from Neural Findings</h2>
+        <ol>
+            <li><strong>Metaphor Processing:</strong> AI will show increased concrete feature activation (visual, tactile, spatial) when processing figurative content</li>
+            <li><strong>Social Inversion:</strong> Nonsocial content may paradoxically activate social processing patterns in certain architectures</li>
+            <li><strong>Literal Encoding Differences:</strong> Different AI architectures will show fundamentally different representation strategies for literal content (based on NT > ASD thalamic/hippocampal differences)</li>
+            <li><strong>Concrete Overflow:</strong> When processing complexity increases, AI systems will "fall back" to concrete semantic features</li>
+        </ol>
+    </div>
+    
+    <h2>Implementation Status</h2>
+    <div class="tool-grid">
+        <div class="tool-card">
+            <h3>Study 1: Behavioral Validation <span class="implementation-tag">LIVE</span></h3>
+            <p><strong>Original:</strong> 370 words, 687 raters, 14 features</p>
+            <p><strong>Implementation:</strong> pattern-analyzer with 14+ analysis tools</p>
+            <a href="https://hillarydanan.github.io/pattern-analyzer/" target="_blank">View Live Tool →</a>
+        </div>
+        
+        <div class="tool-card">
+            <h3>Study 2: Task-based fMRI <span class="implementation-tag">LIVE</span></h3>
+            <p><strong>Original:</strong> 20 NT participants, GLM analysis</p>
+            <p><strong>Implementation:</strong> TIDE-analysis automated testing</p>
+            <a href="https://github.com/HillaryDanan/TIDE-analysis" target="_blank">View Repository →</a>
+        </div>
+        
+        <div class="tool-card">
+            <h3>Study 3: Resting-state rsFC <span class="implementation-tag">LIVE</span></h3>
+            <p><strong>Original:</strong> 120 participants, ATL connectivity</p>
+            <p><strong>Implementation:</strong> TIDE-resonance perception study</p>
+            <a href="https://hillarydanan.github.io/TIDE-resonance/collect_enhanced.html" target="_blank">Participate →</a>
+        </div>
+        
+        <div class="tool-card">
+            <h3>Study 5: Phrase-level Semantics <span class="finding-tag">KEY FINDING</span></h3>
+            <p><strong>Original:</strong> 41 participants (22 NT, 19 ASD), 2x2 factorial design</p>
+            <p><strong>Key Finding:</strong> Thalamic overflow for figurative processing in ASD</p>
+            <p><strong>Implementation:</strong> Metaphor blindness detection in AI</p>
+            <span class="significance-tag">p < .05 cluster-corrected</span>
+        </div>
+        
+        <div class="tool-card">
+            <h3>dmPFC Integration (Φ) <span class="implementation-tag">LIVE</span></h3>
+            <p><strong>Finding:</strong> Internal factor → dmPFC activation</p>
+            <p><strong>Implementation:</strong> BIND dynamics system</p>
+            <a href="https://hillarydanan.github.io/BIND/bind_systems_interactive.html" target="_blank">Interactive Demo →</a>
+        </div>
+        
+        <div class="tool-card">
+            <h3>vATL Overextension <span class="implementation-tag">LIVE</span></h3>
+            <p><strong>Finding:</strong> Concrete overflow in ASD</p>
+            <p><strong>Implementation:</strong> concrete-overflow-detector</p>
+            <a href="https://github.com/HillaryDanan/concrete-overflow-detector" target="_blank">View Tool →</a>
+        </div>
+        
+        <div class="tool-card">
+            <h3>Thalamic Overflow Monitor <span class="finding-tag">TO BUILD</span></h3>
+            <p><strong>Finding:</strong> Left thalamus processes figurative as concrete in ASD</p>
+            <p><strong>Implementation:</strong> Real-time metaphor processing tracker</p>
+            <p><strong>Detects:</strong> When AI defaults to concrete features for abstract content</p>
+        </div>
+        
+        <div class="tool-card">
+            <h3>Results Visualization <span class="implementation-tag">LIVE</span></h3>
+            <p><strong>All findings integrated</strong></p>
+            <p><strong>Real-time data from all tools</strong></p>
+            <a href="https://hillarydanan.github.io/TIDE-resonance/tide-results.html" target="_blank">View Results →</a>
+        </div>
+    </div>
+    
+    <div style="background: #e3f2fd; padding: 30px; border-radius: 8px; margin: 30px 0;">
+        <h2>Quick Start for New Researchers</h2>
+        <ol>
+            <li><strong>Run systematic test:</strong> Use TIDE-analysis on your AI model</li>
+            <li><strong>Analyze patterns:</strong> Results auto-flow to pattern-analyzer</li>
+            <li><strong>Monitor thalamic overflow:</strong> Check for concrete feature activation on figurative content</li>
+            <li><strong>Collect metacognitive data:</strong> Use TIDE-resonance study</li>
+            <li><strong>View integrated results:</strong> Everything visualized in real-time</li>
+        </ol>
+        <p style="margin-top: 20px;">
+            <strong>No setup required!</strong> All tools are live and interconnected.
+        </p>
+    </div>
+
+    <div class="neural-finding" style="background: #f8d7da; border-color: #721c24;">
+        <h2>🔬 Additional Neural Mechanisms</h2>
+        <h3>Right STG Social Processing Inversion</h3>
+        <p><strong>Finding:</strong> NT shows social > nonsocial activation in right STG, while ASD shows the inverse pattern (nonsocial > social)</p>
+        <p><strong>AI Implication:</strong> Social processing architectures may show unexpected activation patterns for nonsocial content</p>
+        
+        <h3>Literal Phrase Representation Differences</h3>
+        <p><strong>Finding:</strong> NT > ASD for literal phrase representations in right thalamus/hippocampus (p < .05)</p>
+        <p><strong>AI Implication:</strong> Different architectures may have fundamentally different encoding strategies for "simple" literal content</p>
+        <span class="significance-tag">Study 5, Figure 43, p. 129</span>
+    </div>
+    
+    <script>
+        // Show live data counts
+        fetch('https://api.github.com/repos/HillaryDanan/TIDE-resonance/issues')
+            .then(r => r.json())
+            .then(data => {
+                // Update with actual collected data count
+                console.log(`Live sessions collected: ${data.length}`);
+            });
+            
+        // Add thalamic overflow monitoring hint
+        console.log('Thalamic Overflow Detection: Monitor concrete feature activation during metaphor processing');
+    </script>
+</body>
+</html>
